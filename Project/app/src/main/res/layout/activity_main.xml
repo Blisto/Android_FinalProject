@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/t"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapsActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/forTestingWidgets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="經緯度"
+            android:textAlignment="center"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/getXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS ON"
+            app:layout_constraintEnd_toEndOf="@+id/button5"
+            app:layout_constraintStart_toStartOf="@+id/button5"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:text="SAVE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/loadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOAD"
+            app:layout_constraintEnd_toEndOf="@+id/saveBtn"
+            app:layout_constraintStart_toStartOf="@+id/saveBtn"
+            app:layout_constraintTop_toBottomOf="@+id/saveBtn" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:ems="10"
+            android:hint="從這裡"
+            android:inputType="textPersonName"
+            android:text="苗栗火車站"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/normalText"
+            app:layout_constraintStart_toStartOf="@+id/normalText"
+            app:layout_constraintTop_toBottomOf="@+id/normalText" />
+
+        <TextView
+            android:id="@+id/normalText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="從"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/normalText2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="到"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="@+id/editText"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜尋"
+            app:layout_constraintEnd_toEndOf="@+id/loadBtn"
+            app:layout_constraintStart_toStartOf="@+id/loadBtn"
+            app:layout_constraintTop_toBottomOf="@+id/loadBtn" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:ems="10"
+            android:hint="到這裡"
+            android:inputType="textPersonName"
+            android:text="台北火車站"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/normalText2"
+            app:layout_constraintStart_toStartOf="@+id/normalText2"
+            app:layout_constraintTop_toBottomOf="@+id/normalText2" />
+
+        <Button
+            android:id="@+id/newact"
+            android:layout_width="62dp"
+            android:layout_height="42dp"
+            android:text="new"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/normalText"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/Widgets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/StartBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="START" />
+
+            <Button
+                android:id="@+id/StopBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="STOP" />
+
+            <Button
+                android:id="@+id/SaveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SAVE" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
